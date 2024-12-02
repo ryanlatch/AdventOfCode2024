@@ -1,7 +1,7 @@
 """
 Advent of code day 1. sort big list into 2 seperate sorted lists, then get total distances between numbers.
+part 2: get a similarity score of format: number * no. of occurences in other list
 """
-
 
 list1 = []
 list2 = []
