@@ -72,6 +72,7 @@ print(diagonal_get(grid))
 answer = horizontal(grid) + vertical(grid) + diagonal_get(grid)
 
 print("answer: ", answer)
+# test
 
 # Part 2
 
