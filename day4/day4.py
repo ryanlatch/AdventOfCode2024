@@ -72,3 +72,30 @@ print(diagonal_get(grid))
 answer = horizontal(grid) + vertical(grid) + diagonal_get(grid)
 
 print("answer: ", answer)
+
+# Part 2
+
+def searchForMas(grid):
+    total = 0
+    for i in range(len(grid)-2): # get every position. We need 3 rows for X-MAS hence -2
+        line1 = grid[i] # the first entry of the grid of strings
+        line2 = grid[i+1] # 2nd line for 
+        line3 = grid[i+2] # 3rd line for 
+
+        # look for MAS in an X i.e. check 3 lines for the pattern. 
+        for col1 in range(len(line1)-2): # col1 is the position of e.g M
+            col2 = col1 + 1 # A
+            col3 = col1 + 2 # S
+
+            if (line1[col1] == "M" and line1[col3] == "S" and line2[col2] == "A" and line3[col1] == "M" and line3[col3] == "S"):
+                total += 1
+            if (line1[col1] == "S" and line1[col3] == "M" and line2[col2] == "A" and line3[col1] == "S" and line3[col3] == "M"):
+                total += 1
+            if (line1[col1] == "S" and line1[col3] == "S" and line2[col2] == "A" and line3[col1] == "M" and line3[col3] == "M"):
+                total += 1
+            if (line1[col1] == "M" and line1[col3] == "M" and line2[col2] == "A" and line3[col1] == "S" and line3[col3] == "S"):
+                total += 1
+    return total
+
+
+print(searchForMas(grid))
